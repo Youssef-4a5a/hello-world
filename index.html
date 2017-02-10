@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        Breedte: <input onkeyup="change()" id="width" type="text"> pixels
+        <br>
+        Hoogte: <input onkeyup="change()" id="height" type="text"> pixels
+        <br>
+        Kleur: <select id="colors" onchange="change()">
+            <option>green</option>
+            <option>yellow</option>
+            <option>blue</option>
+            <option>red</option>
+            <option>grey</option>
+            <option>black</option>
+        </select>
+        <button id="default" onclick="standaard()">Press</button>
+        <br>
+        <div id="field1"></div>
+        <br>
+        <div id="field2"></div>
+        <br>
+        <div id="field3"></div>
+
+        <script>
+            function change() {
+                var colors = document.getElementById("colors").value;
+                var width = document.getElementById("width").value;
+                var height = document.getElementById("height").value;
+
+                for (i = 1; i < 4; i++) {
+                    document.getElementById("field" + i).style.backgroundColor = colors;
+                    document.getElementById("field" + i).style.width = width + "px";
+                    document.getElementById("field" + i).style.height = height + "px";
+                }
+
+            }
+            function standaard() {
+                for (i = 1; i < 4; i++) {
+                    document.getElementById("field" + i).style.backgroundColor = "green";
+                    document.getElementById("field" + i).style.width = 100 + "px";
+                    document.getElementById("field" + i).style.height = 100 + "px";
+                }
+            }
+
+        </script>
+    </body>
+</html>
